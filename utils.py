@@ -4,14 +4,14 @@ from pinecone import Pinecone, ServerlessSpec
 import os
 import openai
 import streamlit as st
-openai.api_key = "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"
+openai.api_key = os.environ.get['OPENAI_API_KEY']
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# os.environ['PINECONE_API_KEY'] = '7aa73978-ba4f-4f7b-adb3-eeb6a425c3f6'
-os.environ['PINECONE_API_ENV'] = 'gcp-starter'
+# os.environ['PINECONE_API_KEY'] = ''
+os.environ['PINECONE_API_ENV'] = ''
 
 pc = Pinecone(api_key='PINECONE_API_KEY')
-index = pinecone.Index(api_key='7aa73978-ba4f-4f7b-adb3-eeb6a425c3f6', index_name='chatbot', host="https://chatbot-g8yjyor.svc.gcp-starter.pinecone.io")
+index = pinecone.Index(api_key='', index_name='chatbot', host="")
 
 def find_match(input):
     input_em = model.encode(input).tolist()
