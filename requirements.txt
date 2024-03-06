@@ -8,5 +8,5 @@ tiktoken==0.4.0
 huggingface-hub==0.14.1
 # uncomment to use instructor embeddings
 sentence-transformers==2.2.2
-streamlit_chat
 pinecone-client
+streamlit-chat==0.1.1
